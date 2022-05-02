@@ -10,4 +10,4 @@ COPY application.properties /home/myuser/.config/acrarium
 RUN adduser -D myuser
 USER myuser
 
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/urandom", "-jar", "./app.jar"]%
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/urandom", "-Duser.home=/home/myuser/", "-Dserver.port=$PORT", "-jar", "./app.jar"]%s
